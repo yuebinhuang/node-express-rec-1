@@ -1,33 +1,5 @@
-# Concept-Driven Backend framework
+## Running the code
 
-## Inspiration
-
-Didn't like the way I coded this project: [Fritter](https://github.com/BarishNamazov/fritter).
-
-## Goals
-
-Make development based on concepts as taught in [6.1040](https://61040-fa22.github.io/schedule) easy.
-
-## Philosophy
-
-For now, see [thoughts](https://github.com/BarishNamazov/conception/blob/main/thoughts.md), but might add to here more later.
-
-## TODOS
-
-- [x] Basic base for defining concepts and routers.
-
-- [x] Make very simple Fritter with Freet and User concepts.
-
-- [x] More examples of concepts under `src/concepts/`, making a simple app.
-
-  - User, Freet, Friend -- fully modular!
-
-- [x] Make methods work with direct method references rather than string names.
-
-- [x] Make actions work with the contents of request directly rather than deal with `req` and `res`.
-
-- [ ] Optional: Implement singleton concept base (i.e., easy user has only one of that object).
-
-- [ ] Unit tests? Need to figure out how to set up Mongo or in-memory mock for that.
-
-- [ ] Simple frontend to test backend manually (or just Postman?).
+1. Run `npm install`
+2. Run `npm start`
+3. Navigate to `localhost:3000` (or whichever port you see in the terminal).

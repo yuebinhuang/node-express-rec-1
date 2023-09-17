@@ -1,5 +1,4 @@
 import { SessionData } from "express-session";
-import { ObjectId } from "mongodb";
 import { NotAllowedError, UnauthenticatedError } from "./errors";
 
 export type WebSessionDoc = SessionData;
@@ -7,13 +6,15 @@ export type WebSessionDoc = SessionData;
 // This allows us to overload express session data type.
 declare module "express-session" {
   export interface SessionData {
-    user?: ObjectId;
+    // This will not be our final implementation! Starting next week, we will have a User concept with a
+    // more rigorous implementation than a string representing the username.
+    user?: string;
   }
 }
 
 export default class WebSessionConcept {
-  setUser(session: WebSessionDoc, user: ObjectId | undefined) {
-    session.user = user;
+  setUser(session: WebSessionDoc, username: string | undefined) {
+    session.user = username;
   }
 
   getUser(session: WebSessionDoc) {

@@ -1,7 +1,5 @@
 {
-  "name": "conception",
-  "version": "0.1-alpha",
-  "description": "POC for web app with concepts",
+  "name": "node-express-rec-1",
   "main": "dist/src/main.js",
   "scripts": {
     "build": "tsc",

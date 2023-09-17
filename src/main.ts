@@ -9,7 +9,6 @@ import * as path from "path";
 dotenv.config();
 
 // Import your concept routers here.
-import { connectDb } from "./db";
 import router from "./routes";
 
 export const app = express();
@@ -41,8 +40,6 @@ app.all("*", (req, res) => {
   });
 });
 
-void connectDb().then(() => {
-  app.listen(PORT, () => {
-    console.log("Started listening on port", PORT);
-  });
+app.listen(PORT, () => {
+  console.log("Started listening on port", PORT);
 });
