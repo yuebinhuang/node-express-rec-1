@@ -1,5 +1,5 @@
 import { SessionData } from "express-session";
-import { NotAllowedError, UnauthenticatedError } from "./errors";
+import { UnauthenticatedError } from "./errors";
 
 export type WebSessionDoc = SessionData;
 
@@ -25,12 +25,6 @@ export default class WebSessionConcept {
   isLoggedIn(session: WebSessionDoc) {
     if (session.user === undefined) {
       throw new UnauthenticatedError("Not logged in!");
-    }
-  }
-
-  isLoggedOut(session: WebSessionDoc) {
-    if (session.user !== undefined) {
-      throw new NotAllowedError("Must be logged out!");
     }
   }
 }
