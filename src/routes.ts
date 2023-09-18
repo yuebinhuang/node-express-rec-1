@@ -8,7 +8,9 @@ class Routes {
   async logIn(session: WebSessionDoc, username: string) {
     // TODO: Make sure the user is logged out before allowing someone to log in.
     // Hint: Take a look at how the logOut function makes sure the user is logged
-    // in before allowing a log out action.
+    // in before allowing a log out action. Bear in mind that a synchronization
+    // like login should just consist of a series of actions that may throw exceptions
+    // and should not have its own control flow.
     WebSession.start(session, username);
     return { msg: "Logged in!", user: username };
   }
