@@ -32,6 +32,7 @@ export default class WebSessionConcept {
   }
 
   end(session: WebSessionDoc) {
+    this.isActive(session);
     session.user = undefined;
   }
 
