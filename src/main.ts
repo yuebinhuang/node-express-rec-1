@@ -1,3 +1,7 @@
+// This file contains boilerplate code for setting up an Express app. You don't need to understand all of the details,
+// but you should understand that we're setting up an Express app that will use our router (containing routes for all
+// of our concepts) and a session so we can store cookies.
+
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
@@ -8,7 +12,7 @@ import * as path from "path";
 // The following line sets up the environment variables before everything else.
 dotenv.config();
 
-// Import your concept routers here.
+// Import our router, which contains the routes for all of our concepts.
 import router from "./routes";
 
 export const app = express();

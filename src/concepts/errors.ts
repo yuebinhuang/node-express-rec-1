@@ -1,3 +1,6 @@
+// In this file, we define an error class and then define some custom errors that we 
+// can throw when actions are prohibited or otherwise unable to be completed successfully.
+
 // Create an error class extending from Error that also maintains a formattable string
 // that can easily be used to replace values inside.
 class FormattableError extends Error {

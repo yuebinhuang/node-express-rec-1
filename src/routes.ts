@@ -21,6 +21,8 @@ class Routes {
     WebSession.setUser(session, undefined);
     return { msg: "Logged out!" };
   }
+
+  // If we had more concepts working, we'd add routes for those here too!
 }
 
 export default getExpressRouter(new Routes());

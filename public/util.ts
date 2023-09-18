@@ -1,3 +1,4 @@
+// Here are our API operations. Right now, we just have logging in and logging out.
 const operations = [
   {
     name: "Login",
@@ -14,8 +15,11 @@ const operations = [
 ];
 
 const API_URL = "http://localhost:3000";
+
+// We'll learn about all of these HTTP methods soon!
 type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
+// Code for making an HTTP request. Don't worry about understanding these details yet.
 async function request(method: HttpMethod, endpoint: string, params?: unknown) {
   try {
     if (method === "GET" && params) {
@@ -42,6 +46,9 @@ async function request(method: HttpMethod, endpoint: string, params?: unknown) {
     };
   }
 }
+
+// The code below is for returning and rendering the frontend for testing our API operations.
+// You do not need to study this carefully for the purposes of prep 2.
 
 function getHtmlOperations() {
   return operations.map((operation) => {
