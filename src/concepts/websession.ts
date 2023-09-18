@@ -20,9 +20,9 @@ declare module "express-session" {
 export default class WebSessionConcept {
   // Concept actions
 
-  // In Express, the session is created spontaneously when the connection is first made, so we do not need
-  // to explicitly allocate a session; we only need to keep track of the user.
   start(session: WebSessionDoc, username: string) {
+    // In Express, the session is created spontaneously when the connection is first made, so we do not need
+    // to explicitly allocate a session; we only need to keep track of the user.
     session.user = username;
   }
 
