@@ -9,16 +9,16 @@ class Routes {
     // TODO: Make sure the user is logged out before allowing someone to log in.
     // Hint: Take a look at how the logOut function makes sure the user is logged
     // in before allowing a log out action.
-    WebSession.setUser(session, username);
+    WebSession.start(session, username);
     return { msg: "Logged in!", user: username };
   }
 
   @Router.post("/logout")
   async logOut(session: WebSessionDoc) {
     // We make sure the user is logged in before allowing a log out action.
-    // isLoggedIn throws an error if the user is not loged in.
-    WebSession.isLoggedIn(session);
-    WebSession.setUser(session, undefined);
+    // isActive throws an error if the user is not loged in.
+    WebSession.isActive(session);
+    WebSession.end(session);
     return { msg: "Logged out!" };
   }
 

@@ -18,16 +18,25 @@ declare module "express-session" {
 }
 
 export default class WebSessionConcept {
-  setUser(session: WebSessionDoc, username: string | undefined) {
+  // Concept actions
+
+  // In Express, the session is created spontaneously when the connection is first made, so we do not need
+  // to explicitly allocate a session; we only need to keep track of the user.
+  start(session: WebSessionDoc, username: string) {
     session.user = username;
   }
 
   getUser(session: WebSessionDoc) {
-    this.isLoggedIn(session);
+    this.isActive(session);
     return session.user!;
   }
 
-  isLoggedIn(session: WebSessionDoc) {
+  end(session: WebSessionDoc) {
+    session.user = undefined;
+  }
+
+  // Helper functions
+  isActive(session: WebSessionDoc) {
     if (session.user === undefined) {
       throw new UnauthenticatedError("Not logged in!");
     }
