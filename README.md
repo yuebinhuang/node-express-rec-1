@@ -2,7 +2,7 @@
 
 The code in this repository is very similar to the starter code you'll be given to develop the backend for your social media app. 
 
-For the prep, you will only need to change `src/routes.ts` (and maybe `src/concepts/websession.ts` depending on your implementation), but here's an overview of the repository setup:
+For the prep, you will only need to change `src/concepts/websession.ts`, but here's an overview of the repository setup:
 
 - `app.ts` holds our app definition using concepts. We'll discuss how to define an app using concepts in the next recitation.
 - `routes.ts` contains REST API (we'll cover this in class soon) definitions for our concepts' actions and synchronizations.
