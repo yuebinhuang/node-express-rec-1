@@ -6,8 +6,8 @@ import { getParamNames } from "./utils";
 export type HttpMethod = "all" | "get" | "post" | "put" | "delete" | "patch" | "options" | "head";
 
 /**
- * This class an abstraction over the express router, used to decorate methods in your concept classes.
- * It will automatically convert actions into express handlers.
+ * This class an abstraction over the Express router, used to decorate methods in your concept classes.
+ * It will automatically convert actions into Express handlers.
  */
 export class Router {
   public readonly expressRouter = express.Router();
