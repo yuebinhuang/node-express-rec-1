@@ -4,7 +4,7 @@ The code in this repository is very similar to the starter code you'll be given 
 
 For the prep, you will only need to change `src/concepts/websession.ts` and `src/routes.ts`, but here's an overview of the repository setup:
 
-- `app.ts` holds our app definition using concepts. We'll discuss how to define an app using concepts later in the course.
+- `app.ts` holds our app definition using concepts. We'll discuss how to define an app using concepts in the next recitation.
 - `routes.ts` contains actions for our concepts, such as `logIn` for the `WebSession` concept.
 - `main.ts` contains boilerplate code for setting up an Express app. In this file, we import our routes (which we defined in `routes.ts`) for our concepts.
 - The `public` directory contains code for rendering the basic frontend where we can test our backend API operations. You won't need to modify anything within this directory for the purposes of this prep.
