@@ -3,7 +3,7 @@
 // reset the session's user when the user logs out.
 
 import { SessionData } from "express-session";
-import { UnauthenticatedError } from "./errors";
+import { NotAllowedError, UnauthenticatedError } from "./errors";
 
 export type WebSessionDoc = SessionData;
 
@@ -28,9 +28,7 @@ export default class WebSessionConcept {
     // Hint: Take a look at how the "end" function makes sure the user is logged in. Keep in mind that a
     // synchronization like starting a session should just consist of a series of actions that may throw
     // exceptions and should not have its own control flow.
-    if (session.user !== undefined) {
-      throw new UnauthenticatedError("Still logged in as " + session.user + "! Please log out before logging in.");
-    }
+    this.isInactive(session);
     session.user = username;
   }
 
@@ -49,6 +47,12 @@ export default class WebSessionConcept {
   isActive(session: WebSessionDoc) {
     if (session.user === undefined) {
       throw new UnauthenticatedError("Not logged in!");
+    }
+  }
+
+  isInactive(session: WebSessionDoc) {
+    if (session.user !== undefined) {
+      throw new NotAllowedError("Already logged in!");
     }
   }
 }
